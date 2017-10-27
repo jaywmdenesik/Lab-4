@@ -4,9 +4,7 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class OrderTest
+public class ProductCatalogue
 {
-	public static void main(String[] args)
-	{
-	}
-}
+	
+};
