@@ -32,14 +32,16 @@ public class OrderApplication
 			return true;
 		};
 		
-		public boolean createOrder(Order order)
+		public static boolean createOrder(Order order)
 		{
-		this.importCatalogue();
+		System.out.println("test");
 		return true;
 		};
 		
 		public static void main(String[] args)
 	{
+		Order a = new Order();
 		importCatalogue();
+		createOrder(a);
 	}
 };

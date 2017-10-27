@@ -10,6 +10,7 @@ public class Order
 	private Double price;
 	private int orderID;
 	
+	public Order(){};
 	public Date getDateRecieved(){return dateRecieved;};
 	public Double calculatePrice(){return price;};
 };
