@@ -24,6 +24,8 @@ public class OrderApplication
 				{
 			      product[i] = new Product(inFile.nextLine(),inFile.nextDouble(),inFile.nextInt());		//create a 'Product' Object using data from 'ProductCatalogue.txt'
 				  fixer = inFile.nextLine();		// resolve .txt file spacing issue
+				  
+				  System.out.println("Adding item '" + product[i].getName() + "' to inventory");
 				}
 			}
 		
@@ -34,15 +36,19 @@ public class OrderApplication
 		
 		public static boolean createOrder(Order order, Product[] product)   //*****Create Order*****\\
 		{
-		order.calculatePrice(product);							// calculate price
+		double price = order.calculatePrice(product);  // calculate price
+		System.out.println("");
+		System.out.println("Your final price is: " + price + "");
 		return true;
 		};
 		
 		public static void main(String[] args)		//*****MAIN ALGORITHM*****\\
 	{
+		System.out.println("");
 		Product[] product;
 		product = new Product [10];
 		product = importCatalogue();							//Import Products
+		System.out.println("");
 		Order a = new Order();						// 
 		createOrder(a, product);								// Create Order
 	}

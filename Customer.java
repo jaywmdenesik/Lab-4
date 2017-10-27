@@ -9,10 +9,17 @@ public class Customer
 	private String name;
 	private String address;
 	private float creditRating;
-	private float discountRating;
+	private double discountRating;
 	
+	public Customer(String nam, String addres, float creditRatin, double discountRatin)
+	{
+		name = nam;
+		address = addres;
+		creditRating =creditRatin;
+		discountRating = discountRatin;
+	}
 	public float getCreditRating(){return creditRating;};
 	public String getName(){return name;};
 	public String getAddress(){return address;};
-	public float getDiscountRating(){return discountRating;};
+	public double getDiscountRating(){return discountRating;};
 };

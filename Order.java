@@ -18,8 +18,8 @@ public class Order
 		
 		for (int i = 0; i < 10; i++)
 		{basePrice += product[i].getPrice();}
-		
-		
+		Customer customer = new Customer("","",0,0.9);
+		price = basePrice * customer.getDiscountRating();
 		
 		return price;
 	};
