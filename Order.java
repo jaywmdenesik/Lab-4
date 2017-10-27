@@ -7,10 +7,20 @@ import java.util.Scanner;
 public class Order
 {
 	private Date dateRecieved;
-	private Double price;
+	private static Double price;
 	private int orderID;
 	
 	public Order(){};
 	public Date getDateRecieved(){return dateRecieved;};
-	public Double calculatePrice(){return price;};
+	public static Double calculatePrice(Product[] product)
+	{
+		double basePrice = 0;
+		
+		for (int i = 0; i < 10; i++)
+		{basePrice += product[i].getPrice();}
+		
+		
+		
+		return price;
+	};
 };

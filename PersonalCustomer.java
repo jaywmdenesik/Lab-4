@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class PersonalCustomer
+public class PersonalCustomer extends Customer
 {
 	private int creditCardNumber;
 };
