@@ -36,10 +36,42 @@ public class OrderApplication
 		
 		public static boolean createOrder(Order order, Product[] product)   //*****Create Order*****\\
 		{
+		Scanner in = new Scanner(System.in);
 		double price = order.calculatePrice(product);  // calculate price
 		System.out.println("");
 		System.out.println("Your final price is: " + price + "");
-		return true;
+		System.out.println("");
+		System.out.print("Would you like to alter your order? <y/n>: ");
+		char checker = in.next().charAt(0);
+		if (checker != 'y')
+		{System.out.println("Finalizing order..."); return true;}
+		
+		System.out.print("To which item would you like to make alterations? <'item name'>: ");
+		String checker2 = in.nextLine();
+		checker2 = in.nextLine();
+		OrderAlteration alter = new OrderAlteration();
+		price = alter.alterOrder(price, product, checker2);
+		System.out.print("Your new total is $" + price + "");
+		System.out.print("");
+		boolean done = false;
+		
+		while (!done)
+		{
+			System.out.print("Would you like to make another alteration? <y/n>: ");
+			
+			checker = in.next().charAt(0);
+			if (checker != 'y')
+			{System.out.println("Finalizing order..."); return true;}
+		
+			System.out.print("To which item would you like to make alterations? <'item name'>: ");
+			checker2 = in.nextLine();
+			checker2 = in.nextLine();
+			price = alter.alterOrder(price, product, checker2);
+			System.out.print("Your new total is $" + price + "");
+			System.out.print("");
+		}
+		
+		return false;
 		};
 		
 		public static void main(String[] args)		//*****MAIN ALGORITHM*****\\
